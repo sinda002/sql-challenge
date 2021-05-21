@@ -6,7 +6,7 @@ LEFT JOIN salaries ON employees.emp_no = salaries.emp_no;
 
 -- |2| List first name, last name, and hire date for employees who were hired in 1986.
 
-SELECT first_name, last_name, hire_date
+SELECT emp_no, first_name, last_name, hire_date
 FROM employees
 WHERE hire_date >= '1986-01-01' AND hire_date < '1986-12-31';
 
@@ -49,7 +49,7 @@ WHERE departments.dept_name LIKE 'Sales' OR departments.dept_name = 'Development
 
 -- |8| In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
-SELECT last_name, COUNT (last_name) AS "Last Name Count"
+SELECT last_name, COUNT(last_name) AS "Last Name Count"
 FROM employees
 GROUP BY last_name
 ORDER BY "Last Name Count" DESC;
